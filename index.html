@@ -1,0 +1,29 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staffing & Comités - Connexion</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+  <div class="login-card">
+    <h1>🗂️ Staffing & Comités</h1>
+    <p class="subtitle">Connexion sécurisée</p>
+    <form id="loginForm">
+      <label>Email</label>
+      <input type="email" id="email" required placeholder="prenom.nom@cabinet.com">
+      <label>Mot de passe</label>
+      <input type="password" id="password" required placeholder="••••••••">
+      <button type="submit" id="loginBtn">Se connecter</button>
+      <p id="error" class="error"></p>
+    </form>
+  </div>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

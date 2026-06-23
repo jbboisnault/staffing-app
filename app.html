@@ -1,0 +1,66 @@
+<!-- app.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staffing & Comités</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🗂️ Staffing & Comités</h1>
+    <nav>
+      <button onclick="showTab('staffing')">Staffing</button>
+      <button onclick="showTab('demandes')">Demandes</button>
+      <button onclick="showTab('comites')">Comités</button>
+      <button onclick="logout()" class="logout">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ONGLET STAFFING -->
+    <section id="staffing" class="tab">
+      <div class="section-head">
+        <h2>Extract staffing hebdomadaire</h2>
+        <div>
+          <input type="week" id="weekPicker">
+          <input type="file" id="csvFile" accept=".csv">
+          <button onclick="importCSV()">Importer CSV</button>
+        </div>
+      </div>
+      <p class="hint">Format CSV : matricule,nom,prenom,grade,practice,mission,taux_allocation,date_debut,date_fin,utilization</p>
+      <table id="staffingTable"><thead></thead><tbody></tbody></table>
+    </section>
+
+    <!-- ONGLET DEMANDES -->
+    <section id="demandes" class="tab hidden">
+      <div class="section-head">
+        <h2>Demandes de staffing</h2>
+        <button onclick="openDemandeForm()">+ Nouvelle demande</button>
+      </div>
+      <div id="demandeForm" class="hidden form-card"></div>
+      <table id="demandesTable"><thead></thead><tbody></tbody></table>
+    </section>
+
+    <!-- ONGLET COMITES -->
+    <section id="comites" class="tab hidden">
+      <div class="section-head">
+        <h2>Préparation des comités</h2>
+        <button onclick="openComiteForm()">+ Nouveau comité</button>
+      </div>
+      <div id="comiteForm" class="hidden form-card"></div>
+      <div id="comitesList"></div>
+    </section>
+  </main>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/staffing.js"></script>
+  <script src="js/committees.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
