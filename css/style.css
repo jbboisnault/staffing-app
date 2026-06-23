@@ -139,3 +139,33 @@ tbody tr:hover { background: #fbfbfe; }
 .badge.Moyenne { background: #fffbeb; color: #d97706; }
 .badge.Basse { background: #f0fdf4; color: #16a34a; }
 .hint { font-size: 12px; color: var(--text-light); margin-bottom: 10px; }
+/* KPIs */
+.kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 24px; }
+.kpi-card { background: linear-gradient(135deg,#fff,#fafbff); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.kpi-val { font-size: 28px; font-weight: 700; color: var(--primary); }
+.kpi-lbl { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+/* Charts */
+.chart-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+.chart-box { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
+
+/* Skills picker */
+.skills-picker { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.skill-chip { background: #f5f6f9; padding: 5px 10px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 1px solid var(--border); }
+.skill-chip input { margin-right: 4px; }
+
+/* Matching */
+.match-header { background: #fff; padding: 18px; border-radius: 16px; margin-bottom: 16px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.match-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 14px; }
+.match-card { background: #fff; border-radius: 14px; padding: 16px; box-shadow: var(--shadow); border-left: 4px solid #ccc; }
+.match-ok { border-left-color: #34d399; }
+.match-warn { border-left-color: #fbbf24; }
+.match-bad { border-left-color: #f87171; }
+.match-top { display: flex; justify-content: space-between; align-items: center; }
+.match-score { font-weight: 700; font-size: 18px; color: var(--primary); }
+.match-meta { font-size: 12px; color: var(--text-light); margin: 6px 0; }
+.match-reasons { font-size: 13px; padding-left: 16px; line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .kpi-row, .chart-grid { grid-template-columns: 1fr; }
+}
