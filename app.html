@@ -18,6 +18,9 @@
       <button onclick="showTab('staffing')">Staffing</button>
       <button onclick="showTab('demandes')">Demandes</button>
       <button onclick="showTab('comites')">Comités</button>
+      <button onclick="showTab('dashboard')">📊 Dashboard</button>
+      <button onclick="showTab('ressources')">👥 Ressources</button>
+      <button onclick="showTab('matching')">🎯 Matching</button>
       <button onclick="logout()" class="logout">Déconnexion</button>
     </nav>
   </header>
@@ -55,6 +58,40 @@
       </div>
       <div id="comiteForm" class="hidden form-card"></div>
       <div id="comitesList"></div>
+    </section>
+    <!-- DASHBOARD -->
+<section id="dashboard" class="tab hidden">
+  <h2>📊 Tableau de bord</h2>
+  <div id="kpis" class="kpi-row"></div>
+  <div class="chart-grid">
+    <div class="chart-box"><canvas id="chartUtil"></canvas></div>
+    <div class="chart-box"><canvas id="chartGrade"></canvas></div>
+    <div class="chart-box"><canvas id="chartStatut"></canvas></div>
+    <div class="chart-box"><canvas id="chartDemandes"></canvas></div>
+  </div>
+</section>
+
+    <!-- RESSOURCES -->
+    <section id="ressources" class="tab hidden">
+      <div class="section-head">
+        <h2>👥 Base des ressources</h2>
+        <button onclick="openRessourceForm()">+ Ajouter ressource</button>
+      </div>
+      <div id="ressourceForm" class="hidden form-card"></div>
+      <table id="ressourcesTable"><thead></thead><tbody></tbody></table>
+    </section>
+    
+    <!-- MATCHING -->
+    <section id="matching" class="tab hidden">
+      <div class="section-head">
+        <h2>🎯 Matching demandes / disponibilités</h2>
+      </div>
+      <div class="form-card">
+        <label>Sélectionner une demande à pourvoir</label>
+        <select id="matchDemandeSelect"></select>
+        <button onclick="lancerMatching(document.getElementById('matchDemandeSelect').value)">Lancer le matching</button>
+      </div>
+      <div id="matchResults"></div>
     </section>
   </main>
 
